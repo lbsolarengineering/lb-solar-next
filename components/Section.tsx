@@ -1,0 +1,1 @@
+export function Section({eyebrow,title,children}:{eyebrow?:string,title:string,children:React.ReactNode}){return <section className="section"><div className="section-head">{eyebrow&&<span>{eyebrow}</span>}<h2>{title}</h2></div>{children}</section>}

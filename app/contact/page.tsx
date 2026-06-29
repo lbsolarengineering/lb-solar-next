@@ -1,0 +1,2 @@
+import { company } from "@/lib/data";
+export default function Contact(){return <main><section className="page-hero"><p className="eyebrow">Contact</p><h1>Connect with LB Solar Engineering & Consultancy</h1></section><section className="page-content"><div className="grid cards"><article><h3>Phone</h3><p>{company.phone}</p></article><article><h3>Email</h3><p>{company.email}</p></article><article><h3>Address</h3><p>{company.address}</p></article></div></section></main>}

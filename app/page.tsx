@@ -1,65 +1,15 @@
-import Image from "next/image";
-
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
-}
+import Link from "next/link";
+import { Section } from "@/components/Section";
+import { company, process, projects, services, stats } from "@/lib/data";
+export default function Home(){return <main>
+<section className="hero"><div className="hero-bg"/><div className="hero-content"><p className="eyebrow">{company.tagline}</p><h1>Engineering Solar Projects That Perform for Decades.</h1><p className="lead">LB Solar Engineering & Consultancy helps homeowners, developers, EPC companies, industries and project owners build technically reliable solar projects through practical design, detailed engineering and independent consultancy.</p><div className="hero-actions"><Link href="/services">Explore Services</Link><Link href="/projects" className="secondary">View Project Experience</Link></div></div><div className="hero-card"><b>Engineering-first consultancy</b><p>Proposal design • Detailed engineering • Project verification • Site studies</p></div></section>
+<section className="stats">{stats.map(([n,l])=><div key={n}><strong>{n}</strong><span>{l}</span></div>)}</section>
+<Section eyebrow="About LB Solar" title="Engineering-first solar consultancy for every project stakeholder."><div className="two"><p>At LB Solar, we believe a solar plant should not be executed only on thumb rules. Every project deserves proper technical assessment, practical engineering and execution-focused documentation. We work with EPC companies, developers, project owners, installers, vendors and end customers to help solar projects perform safely and reliably for decades.</p><Link className="text-link" href="/about">Know More About LB Solar →</Link></div></Section>
+<Section eyebrow="Why LB Solar" title="Built for technical clarity, execution and long-term performance."><div className="grid cards">{["Engineering-First Approach","Practical Site Experience","kW to MW Project Capability","Independent Technical Advisory","Execution-Friendly Documentation","Long-Term Performance Focus"].map(x=><article key={x}><h3>{x}</h3><p>Clear engineering decisions, practical site understanding and documentation that execution teams can actually use.</p></article>)}</div></Section>
+<Section eyebrow="Services" title="Solar engineering and consultancy services."><div className="grid cards">{services.slice(0,6).map(([t,d])=><article key={t}><h3>{t}</h3><p>{d}</p></article>)}</div></Section>
+<Section eyebrow="Process" title="From enquiry to performance review."><div className="timeline">{process.map((p,i)=><div key={p}><b>{String(i+1).padStart(2,"0")}</b><span>{p}</span></div>)}</div></Section>
+<Section eyebrow="Projects" title="Featured project experience without exposing confidential drawings."><div className="grid project-grid">{projects.map(p=><article className="project" key={p.title}><div className="project-media">PV</div><h3>{p.title}</h3><p className="muted">{p.meta}</p><p>{p.details}</p><b>Challenge</b><p>{p.challenge}</p><b>Solution</b><p>{p.solution}</p></article>)}</div></Section>
+<section className="study"><div><span>Technical Studies</span><h2>Solar Site Investigation & Engineering Studies</h2><p>For ground-mounted and large solar projects, we support topography, contour survey, soil investigation, ERT, TRT, hydrology reports, drainage inputs and project-specific studies. These inputs improve foundation design, earthing design, drainage planning, MMS selection and overall reliability.</p></div></section>
+<section className="founder"><div className="founder-img">USR</div><div><span>Founder</span><h2>Upendra Singh Rathore</h2><h3>Founder | Solar Design Engineer | Engineering Consultant</h3><p>Founded LB Solar Engineering & Consultancy with a belief that solar projects should be engineered for long-term performance, not executed only on standard assumptions. With 6.5+ years of exposure across design, engineering, survey, procurement, installation and commissioning support, he has worked across small rooftops to multi-megawatt solar plants.</p><Link className="text-link" href="/about">Meet the Founder →</Link></div></section>
+<section className="cta"><h2>Planning a solar project?</h2><p>Whether you are a homeowner, EPC company, developer or project owner, LB Solar can help you verify, design, optimize and execute your solar project with proper engineering.</p><div><Link href="/enquiry">Send Enquiry</Link><a href={company.whatsapp}>WhatsApp Us</a></div></section>
+</main>}
