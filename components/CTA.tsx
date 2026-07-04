@@ -1,2 +1,3 @@
-import { company } from "@/lib/data";
-export default function CTA(){return <section className="cta"><div><p className="eyebrow">Start with technical clarity</p><h2>Planning a solar project?</h2><p>Whether you are a homeowner, EPC company, developer or project owner, LB Solar can help you verify, design, optimize and execute your solar project with proper engineering.</p></div><div className="cta-actions"><a href="/enquiry" className="btn primary">Send Enquiry</a><a href={`https://wa.me/${company.whatsapp}`} className="btn ghost">WhatsApp Us</a></div></section>}
+import Link from 'next/link';
+import { company } from '@/lib/data';
+export default function CTA(){return <section className="cta"><span>Planning a solar project?</span><h2>Verify, design, optimize and execute your project with proper engineering.</h2><div><Link href="/enquiry">Send Enquiry</Link><a href={`https://wa.me/${company.whatsapp}`}>WhatsApp Us</a></div></section>}
