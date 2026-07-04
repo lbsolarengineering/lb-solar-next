@@ -8,8 +8,9 @@ export const company = {
   email: 'lbsolarenergy@outlook.com',
   address: 'BB-66, Neminath Mall, behind Surbhi Cinema, Sagwara Banswara Road, Sagwara - 314025',
   logo: '/assets/logo/lb-logo.png',
-  founder: '/assets/founder/upendra-singh-rathore.jpg',
-  heroVideo: '/assets/videos/hero.mp4',
+  founder: 'Upendra Singh Rathore',
+  founderImage: '/assets/projects/golna-4-2mwp/cover.png',
+  heroVideo: '/assets/videos/hero video.mp4',
   heroFallback: '/assets/projects/golna-4-2mwp/cover.png'
 };
 
