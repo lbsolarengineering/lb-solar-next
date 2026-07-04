@@ -1,0 +1,1 @@
+export default function ServiceCard({s,i}:{s:any;i:number}){return <article className="service-card"><span>{String(i+1).padStart(2,"0")}</span><h3>{s.title}</h3><p>{s.text}</p><ul>{s.points.map((p:string)=><li key={p}>{p}</li>)}</ul></article>}
