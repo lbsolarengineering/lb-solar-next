@@ -1,2 +1,33 @@
-import Section from "@/components/Section";import CTA from "@/components/CTA";
-export default function Industries(){return <main className="page"><section className="page-hero"><p className="eyebrow">Industries</p><h1>Supporting solar stakeholders across India</h1><p>Engineering support for homeowners, EPC companies, developers, industries, installers, vendors and project owners.</p></section><Section title="Who we serve"><div className="grid cards">{["EPC Companies","Developers","Industries","Project Owners","Installers","Homeowners"].map(x=><article key={x}><h3>{x}</h3><p>Technical clarity, independent review and execution-ready solar engineering support.</p></article>)}</div></Section><CTA/></main>}
+import type { Metadata } from 'next';
+import PageHero from '@/components/ui/PageHero';
+import Section from '@/components/ui/Section';
+import CTASection from '@/components/sections/CTASection';
+import FeatureCard from '@/components/cards/FeatureCard';
+import { industries } from '@/lib/data';
+
+export const metadata: Metadata = {
+  title: 'Industries | LB Solar Engineering & Consultancy',
+  description: 'Solar engineering support for EPC companies, developers, industries, project owners and homeowners across India.',
+};
+
+export default function IndustriesPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Industries"
+        title="Supporting solar stakeholders across India"
+        description="Engineering support for homeowners, EPC companies, developers, industries, installers, vendors and project owners."
+      />
+
+      <Section title="Who we serve">
+        <div className="grid-cards">
+          {industries.map(([title, desc]) => (
+            <FeatureCard key={title} title={title} description={desc} />
+          ))}
+        </div>
+      </Section>
+
+      <CTASection />
+    </>
+  );
+}

@@ -1,2 +1,52 @@
-import {company} from "@/lib/data";import CTA from "@/components/CTA";
-export default function Contact(){return <main className="page"><section className="page-hero"><p className="eyebrow">Contact</p><h1>Connect with LB Solar Engineering & Consultancy</h1><p>For design, engineering, consultancy, verification and project support enquiries.</p></section><section className="contact-grid"><article><h3>Phone</h3><p>{company.phone}</p></article><article><h3>Email</h3><p>{company.email}</p></article><article><h3>Address</h3><p>{company.address}</p></article></section><CTA/></main>}
+import type { Metadata } from 'next';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import PageHero from '@/components/ui/PageHero';
+import CTASection from '@/components/sections/CTASection';
+import Container from '@/components/ui/Container';
+import GlassCard from '@/components/ui/GlassCard';
+import { company } from '@/lib/data';
+
+export const metadata: Metadata = {
+  title: 'Contact | LB Solar Engineering & Consultancy',
+  description: 'Connect with LB Solar for solar design, engineering, consultancy and project support enquiries.',
+};
+
+export default function ContactPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Contact"
+        title="Connect with LB Solar Engineering & Consultancy"
+        description="For design, engineering, consultancy, verification and project support enquiries."
+      />
+
+      <section className="section-padding pt-0">
+        <Container>
+          <div className="grid gap-5 md:grid-cols-3">
+            <GlassCard>
+              <Phone className="h-5 w-5 text-emerald" />
+              <h3 className="mt-4 text-lg font-bold text-white">Phone</h3>
+              <p className="mt-2 text-muted">{company.phone}</p>
+            </GlassCard>
+            <GlassCard>
+              <Mail className="h-5 w-5 text-emerald" />
+              <h3 className="mt-4 text-lg font-bold text-white">Email</h3>
+              <p className="mt-2 text-muted">
+                <a href={`mailto:${company.email}`} className="hover:text-emerald">
+                  {company.email}
+                </a>
+              </p>
+            </GlassCard>
+            <GlassCard>
+              <MapPin className="h-5 w-5 text-emerald" />
+              <h3 className="mt-4 text-lg font-bold text-white">Address</h3>
+              <p className="mt-2 text-muted">{company.address}</p>
+            </GlassCard>
+          </div>
+        </Container>
+      </section>
+
+      <CTASection />
+    </>
+  );
+}

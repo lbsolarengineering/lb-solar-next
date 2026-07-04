@@ -1,1 +1,0 @@
-export default function Section({eyebrow,title,wide,children}:{eyebrow?:string,title:string,wide?:boolean,children:React.ReactNode}){return <section className={wide?'section wide':'section'}><div className="sectionHead">{eyebrow&&<span>{eyebrow}</span>}<h2>{title}</h2></div>{children}</section>}

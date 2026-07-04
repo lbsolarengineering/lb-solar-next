@@ -1,7 +1,69 @@
-import Hero from "@/components/Hero";
-import Section from "@/components/Section";
-import ServiceCard from "@/components/ServiceCard";
-import ProjectCard from "@/components/ProjectCard";
-import CTA from "@/components/CTA";
-import { company, process, projects, services } from "@/lib/data";
-export default function Home(){return <main><Hero/><Section eyebrow="About LB Solar" title="Engineering-first solar consultancy for every project stakeholder."><div className="two"><p>At LB Solar, we believe a solar plant should not be executed only on thumb rules. Every project deserves proper technical assessment, practical engineering and execution-focused documentation.</p><p>We work with EPC companies, developers, project owners, installers, vendors and end customers to help solar projects perform safely and reliably for decades.</p></div></Section><Section eyebrow="Why LB Solar" title="Built for technical clarity, execution and long-term performance."><div className="grid cards">{["Engineering-First Approach","Practical Site Experience","kW to MW Project Capability","Independent Technical Advisory","Execution-Friendly Documentation","Long-Term Performance Focus"].map(t=><article key={t}><h3>{t}</h3><p>Clear, practical and site-ready engineering support for solar project decisions.</p></article>)}</div></Section><Section eyebrow="Services" title="Solar engineering and consultancy services."><div className="grid services-grid">{services.slice(0,6).map((s,i)=><ServiceCard key={s[0]} s={s} i={i}/>)}</div></Section><Section eyebrow="Process" title="From enquiry to performance review."><div className="timeline">{process.map((p,i)=><div key={p}><b>{String(i+1).padStart(2,"0")}</b><span>{p}</span></div>)}</div></Section><Section wide eyebrow="Projects" title="Featured project experience without exposing confidential drawings."><div className="project-grid">{projects.map(p=><ProjectCard key={p.title} p={p}/>)}</div></Section><section className="study"><div><span>Technical Studies</span><h2>Solar Site Investigation & Engineering Studies</h2><p>For ground-mounted and large solar projects, we support the technical studies required before detailed design and execution, including topography and contour survey, soil investigation, soil testing reports, ERT, TRT, hydrology reports, drainage inputs and project-specific site engineering studies.</p></div></section><section className="founder"><img src={company.founderImage} alt={company.founder}/><div><span>Founder</span><h2>{company.founder}</h2><h3>Founder | Solar Design Engineer | Engineering Consultant</h3><p>Founded LB Solar Engineering & Consultancy with a belief that solar projects should be engineered for long-term performance, not executed only on standard assumptions.</p></div></section><CTA/></main>}
+import HeroSection from '@/components/sections/HeroSection';
+import CTASection from '@/components/sections/CTASection';
+import FounderSection from '@/components/sections/FounderSection';
+import ProcessTimeline, { StudyHighlight } from '@/components/sections/ProcessTimeline';
+import Section from '@/components/ui/Section';
+import ServiceCard from '@/components/cards/ServiceCard';
+import ProjectCard from '@/components/cards/ProjectCard';
+import FeatureCard from '@/components/cards/FeatureCard';
+import { process, projects, services, whyItems } from '@/lib/data';
+
+export default function HomePage() {
+  return (
+    <>
+      <HeroSection />
+
+      <Section eyebrow="About LB Solar" title="Engineering-first solar consultancy for every project stakeholder.">
+        <div className="grid gap-8 md:grid-cols-2">
+          <p className="text-muted">
+            At LB Solar, we believe a solar plant should not be executed only on thumb rules. Every project deserves
+            proper technical assessment, practical engineering and execution-focused documentation.
+          </p>
+          <p className="text-muted">
+            We work with EPC companies, developers, project owners, installers, vendors and end customers to help solar
+            projects perform safely and reliably for decades.
+          </p>
+        </div>
+      </Section>
+
+      <Section eyebrow="Why LB Solar" title="Built for technical clarity, execution and long-term performance.">
+        <div className="grid-cards">
+          {whyItems.map(([title, desc]) => (
+            <FeatureCard key={title} title={title} description={desc} />
+          ))}
+        </div>
+      </Section>
+
+      <Section eyebrow="Services" title="Solar engineering and consultancy services.">
+        <div className="grid-services">
+          {services.slice(0, 6).map((s, i) => (
+            <ServiceCard key={s[0]} s={s} i={i} />
+          ))}
+        </div>
+      </Section>
+
+      <Section eyebrow="Process" title="From enquiry to performance review.">
+        <ProcessTimeline steps={process} />
+      </Section>
+
+      <Section wide eyebrow="Projects" title="Featured project experience without exposing confidential drawings.">
+        <div className="grid-projects">
+          {projects.map((p) => (
+            <ProjectCard key={p.title} p={p} />
+          ))}
+        </div>
+      </Section>
+
+      <StudyHighlight />
+
+      <FounderSection>
+        <p>
+          Founded LB Solar Engineering & Consultancy with a belief that solar projects should be engineered for
+          long-term performance, not executed only on standard assumptions.
+        </p>
+      </FounderSection>
+
+      <CTASection />
+    </>
+  );
+}

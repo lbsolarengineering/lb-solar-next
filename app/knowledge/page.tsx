@@ -1,2 +1,33 @@
-import Section from "@/components/Section";import CTA from "@/components/CTA";
-export default function Knowledge(){return <main className="page"><section className="page-hero"><p className="eyebrow">Knowledge Center</p><h1>Solar engineering insights</h1><p>Future articles for technical authority, SEO and customer education.</p></section><Section title="Upcoming topics"><div className="grid cards">{["Why solar projects fail due to poor engineering","Importance of soil investigation","What is PVsyst and why it matters","Rooftop solar design checklist","Ground mount design checklist","How to verify an EPC quotation"].map(x=><article key={x}><h3>{x}</h3><p>Coming soon.</p></article>)}</div></Section><CTA/></main>}
+import type { Metadata } from 'next';
+import PageHero from '@/components/ui/PageHero';
+import Section from '@/components/ui/Section';
+import CTASection from '@/components/sections/CTASection';
+import FeatureCard from '@/components/cards/FeatureCard';
+import { knowledge } from '@/lib/data';
+
+export const metadata: Metadata = {
+  title: 'Knowledge Centre | LB Solar Engineering & Consultancy',
+  description: 'Solar engineering insights, articles and technical guides from LB Solar.',
+};
+
+export default function KnowledgePage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Knowledge Center"
+        title="Solar engineering insights"
+        description="Future articles for technical authority, SEO and customer education."
+      />
+
+      <Section title="Upcoming topics">
+        <div className="grid-cards">
+          {knowledge.map(([title, desc]) => (
+            <FeatureCard key={title} title={title} description={desc} />
+          ))}
+        </div>
+      </Section>
+
+      <CTASection />
+    </>
+  );
+}

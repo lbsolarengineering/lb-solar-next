@@ -1,1 +1,0 @@
-export default function ServiceCard({s,i}:{s:string[],i:number}){const [title,desc]=s;return <article className="serviceCard"><span>{String(i+1).padStart(2,'0')}</span><h3>{title}</h3><p>{desc}</p></article>}

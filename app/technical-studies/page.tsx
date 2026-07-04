@@ -1,2 +1,33 @@
-import Section from "@/components/Section";import CTA from "@/components/CTA";
-export default function TechnicalStudies(){const items=["Topographic survey","Contour survey","Soil investigation","Soil testing report","ERT report","TRT report","Hydrology study","Drainage inputs","Site feasibility support"];return <main className="page"><section className="page-hero"><p className="eyebrow">Technical Studies</p><h1>Solar Site Investigation & Engineering Studies</h1><p>Reliable solar engineering starts with reliable site data.</p></section><Section title="Studies we support"><div className="grid cards">{items.map(i=><article key={i}><h3>{i}</h3><p>Project-specific input for safer foundation design, earthing design, drainage planning, road planning and MMS selection.</p></article>)}</div></Section><CTA/></main>}
+import type { Metadata } from 'next';
+import PageHero from '@/components/ui/PageHero';
+import Section from '@/components/ui/Section';
+import CTASection from '@/components/sections/CTASection';
+import FeatureCard from '@/components/cards/FeatureCard';
+import { technicalStudies } from '@/lib/data';
+
+export const metadata: Metadata = {
+  title: 'Technical Studies | LB Solar Engineering & Consultancy',
+  description: 'Solar site investigation and engineering studies including topography, soil investigation, ERT, TRT and hydrology.',
+};
+
+export default function TechnicalStudiesPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Technical Studies"
+        title="Solar Site Investigation & Engineering Studies"
+        description="Reliable solar engineering starts with reliable site data."
+      />
+
+      <Section title="Studies we support">
+        <div className="grid-cards">
+          {technicalStudies.map(([title, desc]) => (
+            <FeatureCard key={title} title={title} description={desc} />
+          ))}
+        </div>
+      </Section>
+
+      <CTASection />
+    </>
+  );
+}
