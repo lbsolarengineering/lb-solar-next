@@ -24,8 +24,8 @@ export default function Section({
       <Container className={wide ? 'max-w-[1400px]' : ''}>
         <div className="mb-12 max-w-3xl">
           {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-          <h2 className="heading-display mt-4 text-3xl md:text-4xl lg:text-5xl">{title}</h2>
-          {description && <p className="mt-4 text-lg text-muted">{description}</p>}
+          <h2 className="heading-display mt-4 text-[40px] leading-tight md:text-[48px] lg:text-[52px]">{title}</h2>
+          {description && <p className="body-lg mt-5">{description}</p>}
         </div>
         {children}
       </Container>

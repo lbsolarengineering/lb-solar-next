@@ -1,33 +1,52 @@
-import type { Metadata } from 'next';
-import PageHero from '@/components/ui/PageHero';
-import Section from '@/components/ui/Section';
-import CTASection from '@/components/sections/CTASection';
-import ProjectCard from '@/components/cards/ProjectCard';
-import { projects } from '@/lib/data';
+import Image from "next/image";
+import PageHero from "@/components/PageHero";
+import { extractCapacity, projectGroups } from "@/lib/data";
 
-export const metadata: Metadata = {
-  title: 'Projects | LB Solar Engineering & Consultancy',
-  description: 'Project experience across rooftop, utility and proposal engineering for solar projects in India.',
-};
+export const metadata = { title: "Projects" };
 
-export default function ProjectsPage() {
+export default function Projects() {
   return (
     <>
       <PageHero
-        eyebrow="Projects"
-        title="Project Experience Across Rooftop, Utility and Proposal Engineering"
-        description="Our project showcase highlights engineering capability while protecting client-sensitive details and confidential documentation."
+        eyebrow="Engineering Portfolio"
+        title="Proposal and detailed solar design work."
+        text="A categorized selection of LB Solar ground-mount, rooftop and proposal engineering designs."
       />
-
-      <Section title="Case study portfolio" wide>
-        <div className="grid-projects">
-          {projects.map((p) => (
-            <ProjectCard key={p.title} p={p} />
-          ))}
-        </div>
-      </Section>
-
-      <CTASection />
+      <section className="contentWrap projectPortfolio">
+        {projectGroups.map((group) => (
+          <div className="portfolioGroup" key={group.title}>
+            <div className="portfolioHeading">
+              <h2>{group.title}</h2>
+              <span>{group.projects.length} Designs</span>
+            </div>
+            <div className="portfolioGrid">
+              {group.projects.map(([title, image]) => {
+                const capacity = extractCapacity(title);
+                return (
+                  <article className="portfolioCard" key={title}>
+                    <div className="portfolioImage">
+                      <Image
+                        src={image}
+                        alt={title}
+                        fill
+                        sizes="(max-width: 650px) 100vw, (max-width: 1000px) 50vw, 33vw"
+                        className="portfolioCardImg"
+                      />
+                      <div className="projectBadges">
+                        <span className="projectBadge category">{group.badge}</span>
+                        {capacity ? <span className="projectBadge capacity">{capacity}</span> : null}
+                      </div>
+                    </div>
+                    <div className="portfolioBody">
+                      <h3>{title}</h3>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </section>
     </>
   );
 }

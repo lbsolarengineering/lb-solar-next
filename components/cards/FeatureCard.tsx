@@ -4,20 +4,22 @@ export default function FeatureCard({
   title,
   description,
   icon,
+  className = '',
 }: {
   title: string;
   description: string;
   icon?: React.ReactNode;
+  className?: string;
 }) {
   return (
-    <GlassCard>
+    <GlassCard className={`h-full ${className}`}>
       {icon && (
-        <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-emerald/10 text-emerald">
+        <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-bg-sky text-blue">
           {icon}
         </div>
       )}
-      <h3 className="text-lg font-bold text-white">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-muted">{description}</p>
+      <h3 className="card-title">{title}</h3>
+      <p className="body-md mt-3">{description}</p>
     </GlassCard>
   );
 }

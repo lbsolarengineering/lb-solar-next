@@ -1,0 +1,6 @@
+import Link from "next/link";
+import { Bot, Calculator, FileText, LayoutGrid, LineChart, Sparkles } from "lucide-react";
+import PageHero from "@/components/PageHero";
+export const metadata={title:"LB Solar AI"};
+const features=[[FileText,"Automated proposal preparation"],[Calculator,"Preliminary system sizing"],[LayoutGrid,"Layout assistance"],[LineChart,"Generation and financial insights"],[Bot,"Engineering calculators"],[Sparkles,"Technical document generation"]] as const;
+export default function AI(){return <><PageHero eyebrow="Coming Soon" title="LB Solar AI Engineer" text="A next-generation AI-assisted solar engineering platform for EPC companies and solar professionals."/><section className="contentWrap"><div className="aiPage"><div><h2>Faster concepts. Clearer engineering. Better proposals.</h2><p>We are developing a SaaS platform designed to help users prepare preliminary solar designs, technical inputs and professional client proposals. The first customer-ready version is under development.</p></div><div className="aiFeatureGrid">{features.map(([Icon,label])=><article key={label}><Icon/><h3>{label}</h3></article>)}</div><Link className="button buttonPrimary" href="/enquiry">Join Early Access</Link></div></section></>}

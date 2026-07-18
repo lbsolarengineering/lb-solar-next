@@ -1,5 +1,7 @@
 import EngineeringPreview from '@/components/ui/EngineeringPreview';
-import type { Project } from '@/lib/data';
+import { projects } from '@/lib/data';
+
+type Project = (typeof projects)[number];
 
 type ProjectImageProps = {
   project: Project;
@@ -7,20 +9,20 @@ type ProjectImageProps = {
 };
 
 export default function ProjectImage({ project, className = '' }: ProjectImageProps) {
-  if (project.imageType === 'abstract' || !project.image) {
+  if (project.image) {
     return (
-      <EngineeringPreview
-        label="Confidential layout withheld"
-        className={`h-full w-full ${className}`}
+      <img
+        src={project.image}
+        alt={project.title}
+        className={`h-full w-full object-cover transition-transform duration-500 hover:scale-105 ${className}`}
       />
     );
   }
 
   return (
-    <img
-      src={project.image}
-      alt={project.title}
-      className={`h-full w-full object-cover transition-transform duration-500 hover:scale-105 ${className}`}
+    <EngineeringPreview
+      label="Project photograph unavailable"
+      className={`h-full w-full ${className}`}
     />
   );
 }

@@ -1,153 +1,185 @@
 export const company = {
-  name: 'LB Solar Engineering & Consultancy',
-  short: 'LB Solar',
-  tagline: 'Designed to Perform. Engineered to Last.',
-  domain: 'lbsolarengineering.com',
-  phone: '+91 9352375118',
-  whatsapp: '919352375118',
-  email: 'lbsolarenergy@outlook.com',
-  address: 'BB-66, Neminath Mall, behind Surbhi Cinema, Sagwara Banswara Road, Sagwara - 314025',
-  logo: '/assets/logo/lb-logo.png',
-  founder: 'Upendra Singh Rathore',
-  founderInitials: 'USR',
-  founderTitle: 'Founder | Solar Design Engineer | Engineering Consultant',
-  heroVideo: '/assets/videos/hero video.mp4',
-  heroFallback: '/assets/projects/golna-4-2mwp/image1.jpeg',
+  name: "LB Solar Engineering & Consultancy",
+  short: "LB Solar",
+  tagline: "Designed to Perform. Engineered to Last.",
+  phone: "+91 9352375118",
+  whatsapp: "919352375118",
+  email: "lbsolarenergy@outlook.com",
+  address: "BB-66, Neminath Mall, behind Surbhi Cinema, Sagwara Banswara Road, Sagwara – 314025",
+  domain: "lbsolarengineering.com",
+  logo: "/assets/logo/lb-solar-logo.png",
+  founder: "Upendra Singh Rathore",
+  founderTitle: "Founder — LB Solar Engineering & Consultancy",
+  founderInitials: "UR",
+  founderImage: "/assets/founder/upendra-singh-rathore.jpeg",
 };
 
 export const nav = [
-  ['Home', '/'],
-  ['About', '/about'],
-  ['Services', '/services'],
-  ['Projects', '/projects'],
-  ['Technical Studies', '/technical-studies'],
-  ['Career', '/career'],
-  ['Enquiry', '/enquiry'],
-  ['Contact', '/contact'],
+  ["Home", "/"], ["About", "/about"], ["Services", "/services"],
+  ["Projects", "/projects"], ["LB Solar AI", "/lb-solar-ai"],
+  ["Career", "/career"], ["Enquiry", "/enquiry"], ["Contact", "/contact"]
 ] as const;
 
 export const stats = [
-  ['+175', 'MW Designed'],
-  ['+100', 'Projects'],
-  ['+15', 'States Worked'],
-  ['12', 'Years Combined Experience'],
-];
-
-export const strengths = [
-  ['Engineering First', 'Designs are data-driven, precise and built for long-term performance.'],
-  ['Quality & Compliance', 'We follow practical standards to deliver safe, reliable and compliant solutions.'],
-  ['Optimized Performance', 'Better layouts, accurate calculations and optimized yield for higher returns.'],
-  ['Experienced Team', 'Deep domain knowledge across rooftop, C&I and utility-scale solar projects.'],
-];
-
-export const whyItems = [
-  ['Engineering-First Approach', 'Clear, practical and site-ready engineering support for solar project decisions.'],
-  ['Practical Site Experience', 'Clear, practical and site-ready engineering support for solar project decisions.'],
-  ['kW to MW Project Capability', 'Clear, practical and site-ready engineering support for solar project decisions.'],
-  ['Independent Technical Advisory', 'Clear, practical and site-ready engineering support for solar project decisions.'],
-  ['Execution-Friendly Documentation', 'Clear, practical and site-ready engineering support for solar project decisions.'],
-  ['Long-Term Performance Focus', 'Clear, practical and site-ready engineering support for solar project decisions.'],
-];
+  {
+    value: "78.5 MWp+",
+    title: "Ground-Mount Projects",
+    subtitle: "Detailed Engineering Design",
+  },
+  {
+    value: "189+ MWp",
+    title: "Rooftop Projects",
+    subtitle: "Detailed Engineering Design",
+  },
+  {
+    value: "450 MWp+",
+    title: "Proposal Design",
+    subtitle: "Rooftop & Ground-Mount Projects",
+  },
+  {
+    value: "40+",
+    title: "EPC Companies Served",
+    subtitle: "Trusted Engineering Partnerships",
+  },
+  {
+    value: "4",
+    title: "Countries",
+    subtitle: "International Project Experience",
+  },
+  {
+    value: "Globally",
+    title: "Engineering Services",
+    subtitle: "Solar Design & Consultancy Support",
+  },
+] as const;
 
 export const services = [
-  ['Solar Pre-Design & Proposal Engineering', 'Capacity estimation, PV layout, 3D visualization, tentative generation, BOQ/BOM and proposal documentation.'],
-  ['C&I Rooftop Detailed Engineering', 'AC/DC layouts, earthing, LA, cable routing, inverter placement, walkway and safety planning.'],
-  ['Utility-Scale Ground Mount Engineering', 'Array layout, inverter station planning, IDT/HT yard coordination, trenching, piling and MMS support.'],
-  ['Solar Site Investigation & Studies', 'Topography, contour, soil investigation, ERT, TRT, hydrology and drainage engineering support.'],
-  ['Independent Project Verification', 'Quotation review, capacity verification, equipment comparison, site inspection and quality checks.'],
-  ['Complete Consultancy Package', 'End-to-end design, review, procurement support, execution assistance, testing and performance review.'],
-  ['Solar Audit & Third-Party Inspection', 'Independent inspection of existing or ongoing solar projects for safety and performance gaps.'],
-  ['Carport, Floating & Hybrid Solar', 'Preliminary engineering and integration support for modern solar applications including BESS.'],
-];
-
-export const projects = [
-  {
-    title: 'Utility Ground Mount Solar Plant',
-    location: 'Central India',
-    meta: 'Utility-scale • Ground mount • Seasonal tilt',
-    image: '/assets/projects/golna-4-2mwp/image1.jpeg',
-    imageType: 'site' as const,
-    challenge: 'Land constraints required careful balancing of capacity, pitch, tilt angle and generation performance.',
-    solution: 'Optimized seasonal tilt, pitch and layout planning for better generation and execution feasibility.',
-  },
-  {
-    title: 'Solar Proposal Design & 3D Visualization',
-    location: 'Pan-India portfolio',
-    meta: 'Proposal engineering • Layout & visualization',
-    image: null,
-    imageType: 'abstract' as const,
-    challenge: 'EPC teams need fast, clear and technically convincing proposal designs.',
-    solution: 'Professional PV layouts, 3D visuals and generation insights for stronger client presentations.',
-  },
-  {
-    title: 'Commercial & Industrial Rooftop Solar',
-    location: 'North India',
-    meta: 'Industrial rooftop • Grid-connected',
-    image: '/assets/projects/bahadurgarh-466kwp/image1.jpeg',
-    imageType: 'site' as const,
-    challenge: 'Rooftop constraints and equipment placement required careful planning.',
-    solution: 'Practical rooftop engineering aligned with access, safety and execution requirements.',
-  },
-  {
-    title: 'Industrial Rooftop Solar Plant',
-    location: 'Himachal Pradesh, India',
-    meta: 'Industrial rooftop • Zero-export capable',
-    image: null,
-    imageType: 'abstract' as const,
-    challenge: 'Industrial rooftop project with zero-export system consideration.',
-    solution: 'Electrical design coordination and zero-export focused engineering strategy.',
-  },
+  { title: "Solar Pre-Design & Proposal Engineering", text: "Capacity assessment, PV and 3D layouts, preliminary yield, BOM/BOQ and client-ready proposal inputs." },
+  { title: "C&I Rooftop Detailed Engineering", text: "Detailed electrical, civil and structural engineering for RCC, tin-shed and industrial rooftop projects." },
+  { title: "Utility-Scale Ground Mount Engineering", text: "Optimized layout, DC/AC design, cable routing, earthing, lightning protection, MMS and execution drawings." },
+  { title: "Engineering Study Coordination", text: "Scope definition, specialist-agency coordination, report review and integration of site-study findings into design." },
+  { title: "Independent Project Verification", text: "Technical review of EPC proposals, equipment selection, drawings, calculations and execution quality." },
+  { title: "Complete Solar Consultancy", text: "End-to-end technical support from feasibility and engineering through procurement review, execution and commissioning." }
 ];
 
 export const process = [
-  'Requirement & data collection',
-  'Site review and feasibility',
-  'PV layout and generation study',
-  'Detailed engineering and calculations',
-  'BOM / BOQ and documentation',
-  'Approval, procurement review and support',
-  'Installation assistance and supervision',
-  'Testing, commissioning and performance review',
+  "Requirement & data collection", "Site review and feasibility", "PV layout and generation study",
+  "Detailed engineering and calculations", "BOM / BOQ and documentation", "Approval and procurement support",
+  "Installation assistance and supervision", "Testing, commissioning and performance review"
 ];
 
-export const technicalStudies = [
-  ['Topographic survey', 'Project-specific input for safer foundation design, earthing design, drainage planning, road planning and MMS selection.'],
-  ['Contour survey', 'Project-specific input for safer foundation design, earthing design, drainage planning, road planning and MMS selection.'],
-  ['Soil investigation', 'Project-specific input for safer foundation design, earthing design, drainage planning, road planning and MMS selection.'],
-  ['Soil testing report', 'Project-specific input for safer foundation design, earthing design, drainage planning, road planning and MMS selection.'],
-  ['ERT report', 'Project-specific input for safer foundation design, earthing design, drainage planning, road planning and MMS selection.'],
-  ['TRT report', 'Project-specific input for safer foundation design, earthing design, drainage planning, road planning and MMS selection.'],
-  ['Hydrology study', 'Project-specific input for safer foundation design, earthing design, drainage planning, road planning and MMS selection.'],
-  ['Drainage inputs', 'Project-specific input for safer foundation design, earthing design, drainage planning, road planning and MMS selection.'],
-  ['Site feasibility support', 'Project-specific input for safer foundation design, earthing design, drainage planning, road planning and MMS selection.'],
+export const projectGroups = [
+  {
+    title: "Detailed Design – Ground-Mount Projects",
+    badge: "Ground-Mount Detailed Design",
+    projects: [
+      ["1.2 MWp Ground Mount – 3D Design", "/assets/projects/1-2mwp-ground-mount-project-3d-design-d.png"],
+      ["1.74 MWp Telangana – Array Layout", "/assets/projects/1-74mwp-ground-mount-project-telangana-array-layout-d.png"],
+      ["1.93 MWp Ground Mount Plant", "/assets/projects/1-93mwp-plant-ground-mount-d.png"],
+      ["2.4 MWp Ground Mount – Array Layout", "/assets/projects/2-4mwp-plant-ground-mount-array-layout-d.png"],
+      ["2.4 MWp Ground Mount Project Layout", "/assets/projects/2-4mwp-ground-mount-project-array-layout-d.png"],
+      ["5 MWp Ground Mount – Array Layout", "/assets/projects/5mwp-ground-mount-array-layout-d.png"],
+      ["5 MWp Ground Mount – Piling Layout", "/assets/projects/5mwp-ground-mount-pilling-layout-d.png"],
+    ],
+  },
+  {
+    title: "Detailed Design – Rooftop Projects",
+    badge: "Rooftop Detailed Design",
+    projects: [
+      ["46 kWp RCC Roof – MMS Layout", "/assets/projects/46-kwp-rooftop-rcc-mms-layout-d.png"],
+      ["220 kWp Railway Rooftop Project", "/assets/projects/220kwp-railway-project-rooftop-d.png"],
+      ["600 kWp Tin Shed – PV Layout", "/assets/projects/600-kwp-rooftop-tin-shed-pv-layout-d.png"],
+      ["967.01 kWp Tin Shed with Robotic Cleaning", "/assets/projects/967-01-kwp-rooftop-tin-shed-project-with-robotic-cleaning-d.png"],
+      ["1.713 MWp Himachal Pradesh Rooftop", "/assets/projects/1713-9kwp-himachal-pradesh-rooftop-tin-shed-project-pv-layout-d.png"],
+    ],
+  },
+  {
+    title: "Proposal Design – Rooftop 3D & 2D",
+    badge: "Proposal Design",
+    projects: [
+      ["10 kWp Rooftop Proposal – 3D", "/assets/projects/10-kwp-rooftop-proposal-3d-p.png"],
+      ["22 kWp Rooftop Proposal – 3D", "/assets/projects/22-kwp-rooftop-proposal-3d-p.png"],
+      ["81 kWp Rooftop – 3D Design", "/assets/projects/81kwp-3d-design-p.png"],
+      ["97.3 kWp Rooftop – 3D Design", "/assets/projects/97-3kwp-rooftop-project-3d-design-p.png"],
+      ["116 kWp Rooftop Proposal – 3D", "/assets/projects/116-kwp-rooftop-proposal-3d-p.png"],
+      ["341 kWp RCC Roof – PV Layout", "/assets/projects/341-0kwp-rcc-roof-project-pv-layout-p.png"],
+      ["350 kWp Rooftop Proposal – 3D", "/assets/projects/350-kwp-rooftop-proposal-3d-p.png"],
+      ["575 kWp Rooftop Proposal – 3D", "/assets/projects/575-kwp-rooftop-proposal-3d-p.png"],
+      ["600 kWp Rooftop Proposal – 3D", "/assets/projects/600-kwp-rooftop-proposal-3d-p.png"],
+      ["750 kWp Industrial Rooftop", "/assets/projects/750kwp-rooftop-industrial-tin-shed-project-p.png"],
+      ["751 kWp Rooftop – PV Layout", "/assets/projects/751-kwp-rooftop-tin-shed-pv-layout-p.png"],
+      ["1.2 MWp Rooftop Proposal – 3D", "/assets/projects/1200-kwp-rooftop-proposal-3d-p.png"],
+      ["1.5 MWp Rooftop Proposal – 3D", "/assets/projects/1500-24-kwp-rooftop-proposal-3d-p.png"],
+      ["1.5 MWp Rooftop – PV Layout", "/assets/projects/1500-24-kwp-rooftop-proposal-pv-layout-p.png"],
+    ],
+  },
+] as const;
+
+function extractCapacity(title: string): string | undefined {
+  const match = title.match(/([\d.]+)\s*(MWp|kWp)/i);
+  return match ? `${match[1]} ${match[2]}` : undefined;
+}
+
+export const projects = projectGroups.flatMap((g) =>
+  g.projects.slice(0, 2).map(([title, image]) => ({
+    title,
+    type: g.title,
+    location: "LB Solar Engineering Portfolio",
+    image,
+    scope: "",
+    badge: g.badge,
+    capacity: extractCapacity(title),
+  })),
+);
+
+export { extractCapacity };
+
+export const heroSlides = [
+  { src: "/assets/golna-4-2mwp/Main.jpeg", alt: "Utility-scale solar plant installation", kind: "photo" as const },
+  { src: "/assets/golna-4-2mwp/Site 01.jpeg", alt: "Ground-mount solar engineering site", kind: "photo" as const },
+  { src: "/assets/golna-4-2mwp/Site 02.jpeg", alt: "Solar array field under construction", kind: "photo" as const },
+  { src: "/assets/golna-4-2mwp/Site 03.jpeg", alt: "Solar plant site engineering works", kind: "photo" as const },
+  { src: "/assets/bahadurgarh-466kwp/MAIN.jpeg", alt: "Commercial solar installation site", kind: "photo" as const },
+  { src: "/assets/bahadurgarh-466kwp/SITE.jpeg", alt: "Rooftop and site solar project view", kind: "photo" as const },
 ];
 
-export const industries = [
-  ['EPC Companies', 'Technical clarity, independent review and execution-ready solar engineering support.'],
-  ['Solar Developers', 'Technical clarity, independent review and execution-ready solar engineering support.'],
-  ['Industrial Clients', 'Technical clarity, independent review and execution-ready solar engineering support.'],
-  ['Commercial Rooftops', 'Technical clarity, independent review and execution-ready solar engineering support.'],
-  ['Project Owners', 'Technical clarity, independent review and execution-ready solar engineering support.'],
-  ['Homeowners', 'Technical clarity, independent review and execution-ready solar engineering support.'],
-  ['PM-KUSUM Projects', 'Technical clarity, independent review and execution-ready solar engineering support.'],
-  ['Ground Mount Developers', 'Technical clarity, independent review and execution-ready solar engineering support.'],
-];
+export const enquiryCustomerTypes = [
+  "EPC Company",
+  "Developer",
+  "Industry / Business",
+  "Project Owner",
+  "Homeowner",
+  "Vendor / Manufacturer",
+  "Other",
+] as const;
 
-export const knowledge = [
-  ['Why solar projects fail due to poor engineering', 'Coming soon.'],
-  ['Importance of soil investigation in solar projects', 'Coming soon.'],
-  ['What is PVsyst and why it matters', 'Coming soon.'],
-  ['Rooftop solar design checklist', 'Coming soon.'],
-  ['Ground mount solar design checklist', 'Coming soon.'],
-  ['How to verify EPC quotation for solar project', 'Coming soon.'],
-  ['Earthing and lightning protection in solar projects', 'Coming soon.'],
-  ['Zero export solar system explained', 'Coming soon.'],
-];
+export const enquiryServices = [
+  "Solar Pre-Design & Proposal Engineering",
+  "C&I Rooftop Detailed Engineering",
+  "Utility-Scale Ground Mount Engineering",
+  "Engineering Study Coordination",
+  "Independent Project Verification",
+  "Complete Solar Consultancy",
+  "LB Solar AI Early Access",
+] as const;
 
-export const careers = [
-  ['AutoCAD Draftsman', 'Responsibilities include solar documentation, client coordination, layout/drawing support and execution-focused project assistance according to role.'],
-  ['Solar Design Engineer', 'Responsibilities include solar documentation, client coordination, layout/drawing support and execution-focused project assistance according to role.'],
-  ['Sales / Coordination Executive', 'Responsibilities include solar documentation, client coordination, layout/drawing support and execution-focused project assistance according to role.'],
-];
+export const enquiryProjectTypes = [
+  "Ground Mount",
+  "Industrial Rooftop",
+  "Commercial Rooftop",
+  "Residential Rooftop",
+  "PM-KUSUM",
+  "Carport",
+  "Floating Solar",
+  "BESS / Hybrid",
+] as const;
 
-export type Project = (typeof projects)[number];
+export const enquiryProjectStages = [
+  "Concept / Early discussion",
+  "Feasibility / Pre-design",
+  "Proposal stage",
+  "Detailed engineering",
+  "Procurement / Pre-construction",
+  "Under construction",
+  "Commissioning / Review",
+] as const;
