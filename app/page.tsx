@@ -1,14 +1,13 @@
 import Link from "next/link";
 import {
-  Bot,
   CheckCircle2,
   ClipboardCheck,
   Compass,
-  FileText,
   Gauge,
   Lightbulb,
   Map,
   ShieldCheck,
+  Sparkles,
   Target,
   Wrench,
 } from "lucide-react";
@@ -98,34 +97,25 @@ export default function Home() {
         </div>
       </Section>
 
-      <section className="aiStrip">
-        <div>
-          <span className="eyebrow light">Next-Generation Platform</span>
-          <h2>
-            LB Solar AI <small>Coming Soon</small>
-          </h2>
-          <p>
-            An AI-assisted solar engineering platform being developed to help EPC companies and solar
-            professionals prepare project concepts, engineering inputs and client proposals faster.
+      <section className="innovationStrip">
+        <div className="innovationCopy">
+          <span className="eyebrow light">Innovation</span>
+          <h2>Engineering Beyond Today</h2>
+          <p className="innovationSub">
+            Building advanced digital engineering solutions for the future of the solar industry.
           </p>
-        </div>
-        <div className="aiFeatures">
-          <span>
-            <FileText /> Proposal Automation
-          </span>
-          <span>
-            <Gauge /> System Sizing
-          </span>
-          <span>
-            <Map /> Layout Assistance
-          </span>
-          <span>
-            <Bot /> AI Engineering Assistant
+          <p>
+            At LB Solar Engineering &amp; Consultancy, we continuously invest in engineering
+            innovation to simplify complex solar design workflows, improve technical accuracy and
+            accelerate project delivery. Our focus is on developing next-generation digital solutions
+            that support EPC companies, developers and project owners without compromising engineering
+            quality.
+          </p>
+          <span className="innovationStatus">
+            <Sparkles size={16} />
+            Innovation in Progress
           </span>
         </div>
-        <Link className="button buttonLight" href="/lb-solar-ai">
-          Explore LB Solar AI
-        </Link>
       </section>
 
       <Section
@@ -152,22 +142,26 @@ export default function Home() {
         className="processSection"
       >
         <div className="processFlow">
-          {process.map((p, i) => (
-            <article key={p} className="processStep">
-              <div className="stepMarker">
-                <span>{String(i + 1).padStart(2, "0")}</span>
-              </div>
-              <div className="stepContent">
-                <small>Step {i + 1}</small>
-                <h3>{p}</h3>
-              </div>
-              {i < process.length - 1 && (
-                <div className="flowArrow" aria-hidden="true">
-                  →
+          {process.map((p, i) => {
+            const step = i + 1;
+            const showArrow = step % 4 !== 0 && step < process.length;
+            return (
+              <article key={p} className="processStep">
+                <div className="stepMarker">
+                  <span>{String(step).padStart(2, "0")}</span>
                 </div>
-              )}
-            </article>
-          ))}
+                <div className="stepContent">
+                  <small>Step {step}</small>
+                  <h3>{p}</h3>
+                </div>
+                {showArrow && (
+                  <div className="flowArrow" aria-hidden="true">
+                    →
+                  </div>
+                )}
+              </article>
+            );
+          })}
         </div>
       </Section>
 

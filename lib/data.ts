@@ -9,15 +9,19 @@ export const company = {
   domain: "lbsolarengineering.com",
   logo: "/assets/logo/lb-solar-logo.png",
   founder: "Upendra Singh Rathore",
-  founderTitle: "Founder — LB Solar Engineering & Consultancy",
+  founderTitle: "Founder & Lead Solar Design Engineer",
   founderInitials: "UR",
   founderImage: "/assets/founder/upendra-singh-rathore.jpeg",
 };
 
 export const nav = [
-  ["Home", "/"], ["About", "/about"], ["Services", "/services"],
-  ["Projects", "/projects"], ["LB Solar AI", "/lb-solar-ai"],
-  ["Career", "/career"], ["Enquiry", "/enquiry"], ["Contact", "/contact"]
+  ["Home", "/"],
+  ["About", "/about"],
+  ["Services", "/services"],
+  ["Projects", "/projects"],
+  ["Blog", "/blog"],
+  ["Career", "/career"],
+  ["Contact", "/contact"],
 ] as const;
 
 export const stats = [
@@ -135,12 +139,12 @@ export const projects = projectGroups.flatMap((g) =>
 export { extractCapacity };
 
 export const heroSlides = [
-  { src: "/assets/golna-4-2mwp/Main.jpeg", alt: "Utility-scale solar plant installation", kind: "photo" as const },
-  { src: "/assets/golna-4-2mwp/Site 01.jpeg", alt: "Ground-mount solar engineering site", kind: "photo" as const },
-  { src: "/assets/golna-4-2mwp/Site 02.jpeg", alt: "Solar array field under construction", kind: "photo" as const },
-  { src: "/assets/golna-4-2mwp/Site 03.jpeg", alt: "Solar plant site engineering works", kind: "photo" as const },
-  { src: "/assets/bahadurgarh-466kwp/MAIN.jpeg", alt: "Commercial solar installation site", kind: "photo" as const },
-  { src: "/assets/bahadurgarh-466kwp/SITE.jpeg", alt: "Rooftop and site solar project view", kind: "photo" as const },
+  { src: "/assets/hero/hero-01.jpg", alt: "Industrial rooftop solar plant with city skyline", kind: "photo" as const },
+  { src: "/assets/hero/hero-02.jpg", alt: "Utility-scale ground-mounted solar farm", kind: "photo" as const },
+  { src: "/assets/hero/hero-03.jpg", alt: "Rooftop solar arrays on an industrial building", kind: "photo" as const },
+  { src: "/assets/hero/hero-04.jpg", alt: "Industrial rooftop solar plant installation", kind: "photo" as const },
+  { src: "/assets/hero/hero-05.jpg", alt: "Commercial solar installation with modern panels", kind: "photo" as const },
+  { src: "/assets/hero/hero-06.jpg", alt: "Ground-mount solar plant site view", kind: "photo" as const },
 ];
 
 export const enquiryCustomerTypes = [
@@ -160,7 +164,6 @@ export const enquiryServices = [
   "Engineering Study Coordination",
   "Independent Project Verification",
   "Complete Solar Consultancy",
-  "LB Solar AI Early Access",
 ] as const;
 
 export const enquiryProjectTypes = [

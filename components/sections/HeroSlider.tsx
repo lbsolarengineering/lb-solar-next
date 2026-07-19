@@ -48,7 +48,7 @@ export default function HeroSlider() {
           >
             {slide.src && (
               <img
-                src={encodeURI(slide.src)}
+                src={slide.src}
                 alt={slide.alt}
                 className={`h-full w-full object-cover object-center transition-transform duration-[6500ms] ease-out ${
                   active ? 'scale-110' : 'scale-100'

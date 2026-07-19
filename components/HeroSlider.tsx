@@ -5,12 +5,12 @@ import { ChevronLeft, ChevronRight, ShieldCheck, Target, Wrench } from "lucide-r
 import { useEffect, useState } from "react";
 
 const slides = [
-  { src: "/assets/golna-4-2mwp/Main.jpeg", alt: "Utility-scale solar plant installation" },
-  { src: "/assets/golna-4-2mwp/Site 01.jpeg", alt: "Ground-mount solar engineering site" },
-  { src: "/assets/golna-4-2mwp/Site 02.jpeg", alt: "Solar array field under construction" },
-  { src: "/assets/golna-4-2mwp/Site 03.jpeg", alt: "Solar plant site engineering works" },
-  { src: "/assets/bahadurgarh-466kwp/MAIN.jpeg", alt: "Commercial solar installation site" },
-  { src: "/assets/bahadurgarh-466kwp/SITE.jpeg", alt: "Rooftop and site solar project view" },
+  { src: "/assets/hero/hero-01.jpg", alt: "Industrial rooftop solar plant with city skyline" },
+  { src: "/assets/hero/hero-02.jpg", alt: "Utility-scale ground-mounted solar farm" },
+  { src: "/assets/hero/hero-03.jpg", alt: "Rooftop solar arrays on an industrial building" },
+  { src: "/assets/hero/hero-04.jpg", alt: "Industrial rooftop solar plant installation" },
+  { src: "/assets/hero/hero-05.jpg", alt: "Commercial solar installation with modern panels" },
+  { src: "/assets/hero/hero-06.jpg", alt: "Ground-mount solar plant site view" },
 ];
 
 export default function HeroSlider() {
@@ -23,11 +23,11 @@ export default function HeroSlider() {
 
   return (
     <section className="hero">
-      <div className="heroMedia">
+      <div className="heroMedia" aria-hidden="true">
         {slides.map((slide, i) => (
           <img
             key={slide.src}
-            src={encodeURI(slide.src)}
+            src={slide.src}
             alt={slide.alt}
             className={i === index ? "slide active" : "slide"}
             loading={i === 0 ? "eager" : "lazy"}

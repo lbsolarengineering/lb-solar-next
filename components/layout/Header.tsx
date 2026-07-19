@@ -39,9 +39,7 @@ export default function Header() {
             <Link
               key={href}
               href={href}
-              className={`rounded-lg px-2 py-2 text-[15px] font-medium transition-colors hover:bg-bg-soft hover:text-text 2xl:px-3 2xl:text-[16px] ${
-                label === 'LB Solar AI' ? 'text-emerald' : 'text-muted'
-              }`}
+              className="rounded-lg px-2 py-2 text-[15px] font-medium text-muted transition-colors hover:bg-bg-soft hover:text-text 2xl:px-3 2xl:text-[16px]"
             >
               {label}
             </Link>

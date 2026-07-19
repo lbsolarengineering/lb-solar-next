@@ -1,23 +1,7 @@
-import Link from 'next/link';
-import {
-  Calculator,
-  FileSpreadsheet,
-  LayoutTemplate,
-  LineChart,
-  Sparkles,
-  WandSparkles,
-} from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import Container from '@/components/ui/Container';
 
-const capabilities = [
-  { title: 'Automated proposal preparation', icon: WandSparkles },
-  { title: 'Preliminary system sizing', icon: Calculator },
-  { title: 'Engineering calculators', icon: FileSpreadsheet },
-  { title: 'Layout assistance', icon: LayoutTemplate },
-  { title: 'Generation and financial insights', icon: LineChart },
-  { title: 'Technical document generation', icon: Sparkles },
-];
-
+/** Premium innovation band — no product roadmap or AI feature listing. */
 export default function AIEngineerSection() {
   return (
     <section className="section-padding pt-4 md:pt-6">
@@ -33,41 +17,24 @@ export default function AIEngineerSection() {
               backgroundSize: '36px 36px',
             }}
           />
-          <div className="pointer-events-none absolute -right-16 top-0 h-56 w-56 rounded-full bg-emerald/30 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-20 left-10 h-48 w-48 rounded-full bg-sky-300/20 blur-3xl" />
-
-          <div className="relative">
-            <div className="flex flex-wrap items-center gap-3">
-              <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-emerald-light">Platform</p>
-              <span className="rounded-full border border-emerald/40 bg-emerald/15 px-3 py-1 text-[13px] font-bold uppercase tracking-wider text-emerald-light">
-                Coming Soon
-              </span>
-            </div>
-            <h2 className="heading-display mt-4 max-w-3xl text-[36px] leading-tight text-white md:text-[44px]">
-              What LB Solar AI Engineer will unlock
+          <div className="relative max-w-3xl">
+            <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-emerald-light">Innovation</p>
+            <h2 className="heading-display mt-4 text-[36px] leading-tight text-white md:text-[44px]">
+              Engineering Beyond Today
             </h2>
-            <p className="mt-5 max-w-3xl text-[17px] leading-relaxed text-white/80 md:text-[18px]">
-              We are developing an AI-assisted solar engineering platform designed to help EPC companies and solar
-              professionals prepare faster project concepts, engineering inputs and client proposals.
+            <p className="mt-4 text-[17px] font-semibold leading-relaxed text-white/90 md:text-[18px]">
+              Building advanced digital engineering solutions for the future of the solar industry.
             </p>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {capabilities.map(({ title, icon: Icon }) => (
-                <div
-                  key={title}
-                  className="rounded-2xl border border-white/15 bg-white/10 px-5 py-5 backdrop-blur-sm"
-                >
-                  <Icon className="h-5 w-5 text-emerald-light" />
-                  <p className="mt-3 text-[16px] font-semibold text-white">{title}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-10">
-              <Link href="/enquiry?interest=ai-engineer-early-access" className="btn-primary">
-                Join Early Access
-              </Link>
-            </div>
+            <p className="mt-5 text-[16px] leading-relaxed text-white/80 md:text-[17px]">
+              At LB Solar Engineering & Consultancy, we continuously invest in engineering innovation to simplify
+              complex solar design workflows, improve technical accuracy and accelerate project delivery. Our focus is
+              on developing next-generation digital solutions that support EPC companies, developers and project owners
+              without compromising engineering quality.
+            </p>
+            <span className="mt-8 inline-flex items-center gap-2 rounded-full border border-emerald/40 bg-emerald/15 px-4 py-2 text-[13px] font-bold uppercase tracking-wider text-emerald-light">
+              <Sparkles className="h-4 w-4" />
+              Innovation in Progress
+            </span>
           </div>
         </div>
       </Container>

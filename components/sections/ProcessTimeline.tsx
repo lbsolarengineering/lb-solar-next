@@ -56,8 +56,8 @@ export function StudyHighlight() {
             process — helping clients define scope, work with specialist agencies and apply findings to design.
           </p>
           <div className="mt-8">
-            <Button href="/technical-studies">
-              Explore Technical Studies <ArrowRight className="h-4 w-4" />
+            <Button href="/blog">
+              Explore Blog <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
         </div>

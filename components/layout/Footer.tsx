@@ -68,11 +68,11 @@ export default function Footer() {
             © {new Date().getFullYear()} {company.name}. {company.tagline}
           </p>
           <div className="flex flex-wrap gap-5">
-            <Link href="/technical-studies" className="transition-colors hover:text-emerald-light">
-              Engineering Support
+            <Link href="/blog" className="transition-colors hover:text-emerald-light">
+              Blog
             </Link>
-            <Link href="/lb-solar-ai" className="transition-colors hover:text-emerald-light">
-              LB Solar AI
+            <Link href="/enquiry" className="transition-colors hover:text-emerald-light">
+              Enquiry
             </Link>
           </div>
         </div>
